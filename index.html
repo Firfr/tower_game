@@ -4,8 +4,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,minimal-ui" />
-  <title>Tower Building</title>
-  <link rel="icon" type="image/x-icon" href="./assets/favicon.png" />
+  <title>盖高楼</title>
+  <link rel="icon" type="image/x-icon" href="assets/favicon.png" />
   <style>
     * {
       margin: 0;
@@ -374,7 +374,7 @@
   <div class="content">
     <div class="loading">
       <div class="main">
-        <img src="./assets/main-loading.gif" />
+        <img src="assets/main-loading.gif" />
         <div class="progress">
           <div class="title font-wenxue">0%</div>
           <div class="bar">
@@ -382,16 +382,16 @@
               <div class="percent"></div>
             </div>
           </div>
-          <div class="text">Loading...</div>
+          <div class="text">加载中···</div>
         </div>
       </div>
     </div>
     <div class="landing hide">
       <div class="action-1">
-        <img src="./assets/main-index-title.png" class="title swing" />
+        <img src="assets/main-index-title.png" class="title swing" />
       </div>
       <div class="action-2">
-        <img id="start" src="./assets/main-index-start.png" class="start" />
+        <img id="start" src="assets/main-index-start.png" class="start" />
       </div>
     </div>
     <div id="modal" class="modal hide">
@@ -399,16 +399,16 @@
       <div class="js-modal-content modal-content">
         <div class="main">
           <div class="container">
-            <img src="./assets/main-modal-bg.png" class="bg" />
+            <img src="assets/main-modal-bg.png" class="bg" />
             <div class="modal-main">
               <div id="over-modal" class="hide js-modal-card">
-                <img src="./assets/main-modal-over.png" class="over-img" />
+                <img src="assets/main-modal-over.png" class="over-img" />
                 <div id="score" class="over-score font-wenxue"></div>
                 <div id="over-zero" class="hide">
                   <div class="tip">
-                    <p>Try Again!</p>
-                    <img src="./assets/main-modal-again-b.png" class="over-button-b js-reload" /><img
-                      src="./assets/main-modal-invite-b.png" class="over-button-b js-invite" />
+                    <p>再来一次!</p>
+                    <img src="assets/main-modal-again-b.png" class="over-button-b js-reload" /><img
+                      src="assets/main-modal-invite-b.png" class="over-button-b js-invite" />
                   </div>
                 </div>
               </div>
@@ -417,10 +417,10 @@
         </div>
       </div>
     </div>
-    <div class="wxShare hide"><img src="./assets/main-share-icon.png" /></div>
+    <div class="wxShare hide"><img src="assets/main-share-icon.png" /></div>
   </div>
-  <script src="./dist/main.js"></script>
-  <script src="./assets/zepto-1.1.6.min.js"></script>
+  <script src="dist/main.js"></script>
+  <script src="assets/zepto-1.1.6.min.js"></script>
   <script>
     var domReady,
       loadFinish,
@@ -458,7 +458,7 @@
       var failed = status.failed;
       if (failed > 0 && !loadError) {
         loadError = true;
-        alert("Network error... Please try again.");
+        alert("网络错误······ 请重试。");
         return;
       }
       var percent = parseInt((success / total) * 100);
@@ -558,7 +558,7 @@
       false
     );
   </script>
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YCWZ8ZDCH2"></script>
+  <script async src="remote_files/gtag.js"></script>
   <script>
     function gtag() {
       dataLayer.push(arguments);
