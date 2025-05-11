@@ -17,6 +17,79 @@
   <img src="https://user-images.githubusercontent.com/17680888/47480646-abc55b80-d863-11e8-9337-4ea768ebe55d.png" />
 </p>
 
+## 部署说明
+
+首先感谢原作者的开源。[原项目地址](https://github.com/iamkun/tower_game)
+
+具体汉化了那些内容，请参考[翻译说明](./翻译说明.md)。
+
+有需要帮忙部署这个项目的朋友,一杯奶茶,即可程远程帮你部署，需要可联系。  
+微信号 `E-0_0-`  
+闲鱼搜索用户 `明月人间`  
+或者邮箱 `firfe163@163.com`  
+如果这个项目有帮到你。欢迎start。
+
+有其他的项目的汉化需求，欢迎提issue。或其他方式联系通知。
+
+手机浏览器，点击`重新开始`没反应，刷新浏览器。  
+手机浏览器，在加载界面时间过长，检查是否开启了广告拦截插件。
+
+### 镜像
+
+从阿里云或华为云镜像仓库拉取镜像，注意填写镜像标签，镜像仓库中没有`latest`标签
+
+容器内部端口 3000
+
+```bash
+swr.cn-north-4.myhuaweicloud.com/firfe/tower_game:2025.05.09
+```
+
+### docker run 命令部署
+
+```bash
+docker run -d \
+--name tower_game \
+--network bridge \
+--restart always \
+--log-opt max-size=1m \
+--log-opt max-file=3 \
+-p 3000:3000 \
+swr.cn-north-4.myhuaweicloud.com/firfe/tower_game:2025.05.09
+```
+### compose 文件部署 👍推荐
+
+```yaml
+#version: '3.9'
+services:
+  tower_game:
+    container_name: tower_game
+    image: swr.cn-north-4.myhuaweicloud.com/firfe/tower_game:2025.05.09
+    network_mode: bridge
+    restart: always
+    logging:
+      options:
+        max-size: 1m
+        max-file: '3'
+    ports:
+      - 3000:3000
+```
+
+## 修改说明
+
+这里对除了汉化之外的代码修改的说明。  
+增加修改部分具体见 [修改说明](./修改说明.md)。
+
+`./README.md` 文件翻译，增加 `## 部署说明`、`## 修改说明`、`## 效果截图` 部分。
+
+增加目录 `./图片` `./remote_files`(引用的远程文件)
+新增文件 `./.dockerignore`、`./Dockerfile`、`./翻译说明.md`、`./修改说明.md`
+
+## 效果截图
+
+| ![效果图-1](图片/效果图-1.png) | ![效果图-2](图片/效果图-2.png) |
+| - | - |
+
+
 ## Game Rule 游戏规则
 
 以下为默认游戏规则，也可参照下节自定义游戏参数
